@@ -19,7 +19,7 @@ app.use(express.json());
 app.use('/api', router);
 
 //app.use(express.static(path.join(__dirname, 'client', 'build')));
-//app.use(express.static('./client/build'));
+app.use(express.static('./client/build'));
 
 if (process.env.NODE_ENV === 'production') {
   //server static content
@@ -28,9 +28,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(errorHandler);
-// app.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Working!!!' });
-// });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 const start = async () => {
   try {
