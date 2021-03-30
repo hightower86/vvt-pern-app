@@ -6,7 +6,9 @@ iput following commands:
 
 yarn
 
-cd client yarn
+cd client 
+
+yarn
 
 cd ..
 
