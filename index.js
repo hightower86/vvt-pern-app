@@ -18,9 +18,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/api', router);
 
-//app.use(express.static(path.join(__dirname, 'client', 'build')));
-//app.use(express.static('./client/build'));
-
 if (process.env.NODE_ENV === 'production') {
   //server static content
   // yarn build

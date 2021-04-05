@@ -10,7 +10,3 @@ module.exports = new Sequelize(
     port: process.env.DB_PORT,
   }
 );
-
-const proConfig = {
-  connectionString: process.env.DATABASE_URL, // heroku addon
-};
