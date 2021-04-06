@@ -50,8 +50,6 @@ interface Props {
   idx: number
 }
 
-
-
 const Block = ({ block, idx }: Props) => {
 
   const [showDelButton, setShowDelButton] = useState(false)
@@ -96,7 +94,7 @@ const Block = ({ block, idx }: Props) => {
       >
         {block.text}
       </StyledBlock>
-      {showDelButton && <DeleteButton onClick={handleDeleteBlock}>x</DeleteButton>}
+      {showDelButton && <DeleteButton onClick={handleDeleteBlock} onMouseOver={() => setShowDelButton(true)}>x</DeleteButton>}
 
     </div>
   )
