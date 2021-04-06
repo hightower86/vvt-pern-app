@@ -31,6 +31,14 @@ const Title = styled.h1`
 const InputGroup = styled.div`
   color:white
 `
+const Link = styled.a`
+  color: white;
+  text-decoration: none;
+  
+  &:hover{
+    color:#f0a3a3;
+  }
+`
 
 const SidePanel = () => {
   const dispatch = useDispatch()
@@ -68,7 +76,7 @@ const SidePanel = () => {
         <InputGroup>
           <label htmlFor='fontSize'>Font size:</label>
           <Input
-            style={{ width: 80, marginRight: 10 }}
+            style={{ width: 60, margin: '0 10px' }}
             onChange={(e) => handleChange(e)}
             onBlur={(e) => handleOnBlur(e)}
             name='fontSize'
@@ -93,6 +101,7 @@ const SidePanel = () => {
             type='color'
             value={block.bgColor} />
         </InputGroup>
+        <Link target='blank' rel='noopener noreferrer' href='https://github.com/hightower86/vvt-pern-app'>Go to Code</Link>
       </form>
 
     </Panel>

@@ -13,6 +13,7 @@ type Custom = {
 const StyledBlock = styled.div<Custom>`
 
     border:1px solid gray;
+    min-width:20px;
     padding: 5px;
     overflow: auto;
     margin: 5px 0px;
