@@ -13,7 +13,7 @@ type Custom = {
 const StyledBlock = styled.div<Custom>`
 
     border:1px solid gray;
-    min-width:20px;
+    min-width:30px;
     padding: 5px;
     overflow: auto;
     margin: 5px 0px;
@@ -72,7 +72,7 @@ const Block = ({ block, idx }: Props) => {
 
   const handleDeleteBlock = () => {
     dispatch(deleteBlock(block.id!))
-    // setShowDelButton(false)
+    setShowDelButton(false)
   }
 
   const handleOnBlur = (e: React.FocusEvent<HTMLDivElement>) => {
@@ -84,8 +84,6 @@ const Block = ({ block, idx }: Props) => {
         contentEditable={true}
         suppressContentEditableWarning={true}
         onFocus={handleOnFocus}
-        onMouseOver={() => setShowDelButton(true)}
-        onMouseLeave={() => setShowDelButton(false)}
         onInput={(e) => handleOnInput(e)}
         onBlur={(e) => handleOnBlur(e)}
         color={block.color}
@@ -94,7 +92,7 @@ const Block = ({ block, idx }: Props) => {
       >
         {block.text}
       </StyledBlock>
-      {showDelButton && <DeleteButton onClick={handleDeleteBlock} onMouseOver={() => setShowDelButton(true)}>x</DeleteButton>}
+      {showDelButton && <DeleteButton onClick={handleDeleteBlock} >x</DeleteButton>}
 
     </div>
   )
