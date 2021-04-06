@@ -74,7 +74,7 @@ const Block = ({ block, idx }: Props) => {
 
   const handleDeleteBlock = () => {
     dispatch(deleteBlock(block.id!))
-    setShowDelButton(false)
+    // setShowDelButton(false)
   }
 
   const handleOnBlur = (e: React.FocusEvent<HTMLDivElement>) => {
@@ -86,6 +86,8 @@ const Block = ({ block, idx }: Props) => {
         contentEditable={true}
         suppressContentEditableWarning={true}
         onFocus={handleOnFocus}
+        onMouseOver={() => setShowDelButton(true)}
+        onMouseLeave={() => setShowDelButton(false)}
         onInput={(e) => handleOnInput(e)}
         onBlur={(e) => handleOnBlur(e)}
         color={block.color}
